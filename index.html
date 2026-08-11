@@ -21,12 +21,12 @@
                 extend: {
                     colors: {
                         boho: {
-                            light: '#FAF8F5',
-                            sand: '#EAE0D5',
-                            teal: '#2A9D8F',
-                            orange: '#F4A261',
-                            rust: '#E76F51',
-                            dark: '#264653'
+                            light: '#F0F4F8', /* Very soft cool blue for main background */
+                            sand: '#FCE7F3', /* Soft pink for secondary backgrounds */
+                            teal: '#10B981', /* Emerald Green for accents */
+                            orange: '#EC4899', /* Vibrant Pink for buttons and highlights */
+                            rust: '#3B82F6', /* Bright Blue for secondary buttons/icons */
+                            dark: '#1E3A8A'  /* Deep Blue for text and dark sections */
                         }
                     },
                     fontFamily: {
@@ -34,12 +34,14 @@
                         serif: ['Lora', 'serif'],
                     },
                     backgroundImage: {
-                        'hero-pattern': "linear-gradient(to bottom, rgba(38, 70, 83, 0.4), rgba(38, 70, 83, 0.8)), url('https://images.unsplash.com/photo-1544473244-f6895e69ce8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                        /* Updated hero gradient to match the new deep blue */
+                        'hero-pattern': "linear-gradient(to bottom, rgba(30, 58, 138, 0.4), rgba(30, 58, 138, 0.9)), url('./assets/arambol-beach.jpg')",
                     }
                 }
             }
         }
     </script>
+    
     <style>
         /* Custom styles for elements that need specific transitions outside of standard Tailwind utilities */
         .reveal {
@@ -52,7 +54,7 @@
             transform: translateY(0);
         }
         .glass-nav {
-            background: rgba(250, 248, 245, 0.85);
+            background: rgba(240, 244, 248, 0.85); /* Adjusted for new light blue */
             backdrop-filter: blur(10px);
         }
     </style>
@@ -64,22 +66,22 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <i class="fa-solid fa-sun text-boho-orange text-2xl"></i>
+                    <i class="fa-solid fa-water text-boho-orange text-2xl"></i>
                     <span class="font-serif font-bold text-2xl text-boho-dark tracking-wide">Arambol</span>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="text-boho-dark hover:text-boho-rust font-medium transition-colors">The Vibe</a>
-                    <a href="#attractions" class="text-boho-dark hover:text-boho-rust font-medium transition-colors">Explore</a>
-                    <a href="#routine" class="text-boho-dark hover:text-boho-rust font-medium transition-colors">Daily Rhythm</a>
-                    <a href="#travel" class="text-boho-dark hover:text-boho-rust font-medium transition-colors">Getting Here</a>
-                    <a href="#travel" class="bg-boho-rust text-white px-6 py-2 rounded-full font-medium hover:bg-boho-orange transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Plan Your Trip</a>
+                    <a href="#about" class="text-boho-dark hover:text-boho-orange font-medium transition-colors">The Vibe</a>
+                    <a href="#attractions" class="text-boho-dark hover:text-boho-orange font-medium transition-colors">Explore</a>
+                    <a href="#routine" class="text-boho-dark hover:text-boho-orange font-medium transition-colors">Daily Rhythm</a>
+                    <a href="#travel" class="text-boho-dark hover:text-boho-orange font-medium transition-colors">Getting Here</a>
+                    <a href="#travel" class="bg-boho-orange text-white px-6 py-2 rounded-full font-medium hover:bg-boho-rust transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Plan Your Trip</a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-boho-dark hover:text-boho-rust focus:outline-none p-2">
+                    <button id="mobile-menu-btn" class="text-boho-dark hover:text-boho-orange focus:outline-none p-2">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -101,7 +103,7 @@
         <div class="text-center px-4 max-w-4xl mx-auto z-10 reveal active">
             <span class="text-boho-orange font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-4 block drop-shadow-md">North Goa's Hidden Gem</span>
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 drop-shadow-lg leading-tight">
-                Discover the Magic of <span class="text-boho-sand">Arambol</span>
+                Discover the Magic of <span class="text-boho-orange">Arambol</span>
             </h1>
             <p class="text-lg md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto font-light drop-shadow-md">
                 A haven for free spirits, artists, and seekers. Unplug, unwind, and embrace the bohemian rhythm of Goa's most enchanting coastline.
@@ -129,7 +131,7 @@
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="lg:w-1/2 reveal">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Arambol Vibe" class="rounded-3xl shadow-2xl relative z-10 w-full h-[500px] object-cover">
+                        <img src="./assets/arambol-beach-cover.jpg" alt="Arambol Vibe" class="rounded-3xl shadow-2xl relative z-10 w-full h-[500px] object-cover">
                         <!-- Decorative element -->
                         <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-boho-orange rounded-full mix-blend-multiply filter blur-2xl opacity-50 z-0 animate-pulse"></div>
                         <div class="absolute -top-6 -right-6 w-48 h-48 bg-boho-teal rounded-full mix-blend-multiply filter blur-2xl opacity-50 z-0 animate-pulse" style="animation-delay: 2s;"></div>
@@ -148,7 +150,7 @@
                     
                     <div class="grid grid-cols-2 gap-6">
                         <div class="flex items-start gap-4">
-                            <div class="bg-boho-sand p-3 rounded-xl text-boho-rust">
+                            <div class="bg-boho-sand p-3 rounded-xl text-boho-orange">
                                 <i class="fa-solid fa-om text-xl"></i>
                             </div>
                             <div>
@@ -171,91 +173,79 @@
         </div>
     </section>
 
-    <section id="attractions" class="py-24 bg-white relative">
-        <!-- Subtle background pattern -->
-        <div class="absolute inset-0 opacity-[0.03] z-0" style="background-image: radial-gradient(#264653 1px, transparent 1px); background-size: 20px 20px;"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-boho-orange font-medium tracking-widest uppercase text-sm mb-2">Must Visit Places</h2>
-                <h3 class="text-4xl md:text-5xl font-serif font-bold text-boho-dark mb-4">Discover the Wonders of Arambol</h3>
-                <p class="text-gray-600 text-lg">Beyond the golden sands, discover hidden lakes, jungle trails, and cultural experiences that make this coastline unique.</p>
+    <section id="attractions" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-boho-teal font-medium tracking-widest uppercase text-sm mb-2">Explore</h2>
+                <h3 class="text-4xl md:text-5xl font-serif font-bold text-boho-dark">Discover Arambol</h3>
             </div>
-
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
                 <!-- Card 1 -->
-                <div class="bg-boho-light rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group reveal">
-                    <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sweet Water Lake" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-boho-teal text-xs font-bold px-3 py-1 rounded-full">
-                            Nature
-                        </div>
+                <div class="bg-boho-light rounded-[24px] overflow-hidden shadow-lg flex flex-col reveal border border-boho-sand/50">
+                    <div class="relative h-48">
+                        <img src="./assets/Sweet-Water-Lake.jpg" alt="Sweet Water Lake" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white/95 text-boho-teal px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase shadow-sm backdrop-blur-sm">Nature</span>
                     </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold font-serif text-boho-dark mb-2">Sweet Water Lake</h4>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                            Also known as Vagkolam, this freshwater lagoon is a short hike north. Edged by palm trees and fed by hot springs, it's famous for its skin-cleansing sulphurous mud.
-                        </p>
-                        <a href="#" class="text-boho-rust font-semibold text-sm hover:text-boho-orange transition-colors flex items-center gap-1">
-                            Read more <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-serif font-bold text-xl text-boho-dark mb-3">Sweet Water Lake</h4>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">Also known as Vagkolam, this freshwater lagoon is a short hike north. Edged by palm trees and fed...</p>
+                        
+                        <!-- Wide Button -->
+                        <a href="https://maps.app.goo.gl/btFwS6NTHANjKk8o7" target="_blank" class="mt-auto w-full bg-boho-rust/10 border border-boho-rust/20 text-boho-rust hover:bg-boho-rust hover:text-white transition-all duration-300 py-3.5 rounded-xl flex items-center justify-center gap-2 font-medium text-sm shadow-sm group">
+                            <i class="fa-solid fa-map-location-dot group-hover:animate-bounce"></i> View on Map
                         </a>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-boho-light rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group reveal" style="transition-delay: 100ms;">
-                    <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="The Banyan Tree" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-boho-teal text-xs font-bold px-3 py-1 rounded-full">
-                            Hidden Gem
-                        </div>
+                <div class="bg-boho-light rounded-[24px] overflow-hidden shadow-lg flex flex-col reveal border border-boho-sand/50" style="transition-delay: 100ms;">
+                    <div class="relative h-48">
+                        <img src="./assets/The-Banyan-Tree.jpg" alt="The Banyan Tree" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white/95 text-boho-teal px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase shadow-sm backdrop-blur-sm">Hidden Gem</span>
                     </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold font-serif text-boho-dark mb-2">The Banyan Tree</h4>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                            Hidden deep in the jungle valley beyond the lake, this legendary tree is a historic gathering spot for artists, featuring the iconic "Money Stone" sculpture.
-                        </p>
-                        <a href="#" class="text-boho-rust font-semibold text-sm hover:text-boho-orange transition-colors flex items-center gap-1">
-                            Read more <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-serif font-bold text-xl text-boho-dark mb-3">The Banyan Tree</h4>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">Hidden deep in the jungle valley beyond the lake, this legendary tree is a historic gathering spot for artist...</p>
+                        
+                        <!-- Wide Button -->
+                        <a href="https://maps.app.goo.gl/V3XZcVtfASJvkkjE9" target="_blank" class="mt-auto w-full bg-boho-rust/10 border border-boho-rust/20 text-boho-rust hover:bg-boho-rust hover:text-white transition-all duration-300 py-3.5 rounded-xl flex items-center justify-center gap-2 font-medium text-sm shadow-sm group">
+                            <i class="fa-solid fa-map-location-dot group-hover:animate-bounce"></i> View on Map
                         </a>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-boho-light rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group reveal" style="transition-delay: 200ms;">
-                    <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1519865885898-a54a6f2c7eea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sunset Drum Circles" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-boho-teal text-xs font-bold px-3 py-1 rounded-full">
-                            Culture
-                        </div>
+                <div class="bg-boho-light rounded-[24px] overflow-hidden shadow-lg flex flex-col reveal border border-boho-sand/50" style="transition-delay: 200ms;">
+                    <div class="relative h-48">
+                        <img src="./assets/Sunset-Drum-Circles.jpg" alt="Sunset Drum Circles" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white/95 text-boho-teal px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase shadow-sm backdrop-blur-sm">Culture</span>
                     </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold font-serif text-boho-dark mb-2">Sunset Drum Circles</h4>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                            Every evening, locals and travelers gather on the beach for an organic, hypnotic drum circle, accompanied by fire dancers and a magical sunset vibe.
-                        </p>
-                        <a href="#" class="text-boho-rust font-semibold text-sm hover:text-boho-orange transition-colors flex items-center gap-1">
-                            Read more <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-serif font-bold text-xl text-boho-dark mb-3">Sunset Drum Circles</h4>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">Every evening, locals and travelers gather on the beach for an organic, hypnotic drum circle, accompanied...</p>
+                        
+                        <!-- Wide Button -->
+                        <a href="https://maps.app.goo.gl/4gh8bTVZoa4m8qhc9" target="_blank" class="mt-auto w-full bg-boho-rust/10 border border-boho-rust/20 text-boho-rust hover:bg-boho-rust hover:text-white transition-all duration-300 py-3.5 rounded-xl flex items-center justify-center gap-2 font-medium text-sm shadow-sm group">
+                            <i class="fa-solid fa-map-location-dot group-hover:animate-bounce"></i> View on Map
                         </a>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-boho-light rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group reveal" style="transition-delay: 300ms;">
-                    <div class="h-56 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1521510895919-46920266ddb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Paragliding & Surf" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-boho-teal text-xs font-bold px-3 py-1 rounded-full">
-                            Adventure
-                        </div>
+                <div class="bg-boho-light rounded-[24px] overflow-hidden shadow-lg flex flex-col reveal border border-boho-sand/50" style="transition-delay: 300ms;">
+                    <div class="relative h-48">
+                        <img src="./assets/Paragliding-Surf.jpg" alt="Paragliding & Surf" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-white/95 text-boho-teal px-3 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase shadow-sm backdrop-blur-sm">Adventure</span>
                     </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold font-serif text-boho-dark mb-2">Paragliding & Surf</h4>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                            Thanks to coastal winds and adjacent cliffs, Arambol is a premier spot for paragliding, offering bird's-eye views of the coastline, alongside excellent surfing.
-                        </p>
-                        <a href="#" class="text-boho-rust font-semibold text-sm hover:text-boho-orange transition-colors flex items-center gap-1">
-                            Read more <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h4 class="font-serif font-bold text-xl text-boho-dark mb-3">Paragliding & Surf</h4>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow leading-relaxed">Thanks to coastal winds and adjacent cliffs, Arambol is a premier spot for paragliding, offering bird's-eye vie...</p>
+                        
+                        <!-- Wide Button -->
+                        <a href="https://maps.app.goo.gl/j6Rh88nMQdwKRisNA" target="_blank" class="mt-auto w-full bg-boho-rust/10 border border-boho-rust/20 text-boho-rust hover:bg-boho-rust hover:text-white transition-all duration-300 py-3.5 rounded-xl flex items-center justify-center gap-2 font-medium text-sm shadow-sm group">
+                            <i class="fa-solid fa-map-location-dot group-hover:animate-bounce"></i> View on Map
                         </a>
                     </div>
                 </div>
@@ -290,7 +280,7 @@
                             <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow">
                                 <div class="flex items-center justify-between mb-1">
                                     <h4 class="font-bold text-boho-dark text-lg">Morning Yoga</h4>
-                                    <span class="text-boho-rust font-semibold text-sm">7:00 AM</span>
+                                    <span class="text-boho-orange font-semibold text-sm">7:00 AM</span>
                                 </div>
                                 <p class="text-sm text-gray-600">Start your day with a drop-in Ashtanga or Hatha class at one of the many beachside shalas.</p>
                             </div>
@@ -298,13 +288,13 @@
 
                         <!-- Event 2 -->
                         <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-boho-sand bg-boho-orange text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-boho-sand bg-boho-rust text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                                 <i class="fa-solid fa-water text-sm"></i>
                             </div>
                             <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow">
                                 <div class="flex items-center justify-between mb-1">
                                     <h4 class="font-bold text-boho-dark text-lg">Lake & Jungle Trek</h4>
-                                    <span class="text-boho-rust font-semibold text-sm">10:30 AM</span>
+                                    <span class="text-boho-orange font-semibold text-sm">10:30 AM</span>
                                 </div>
                                 <p class="text-sm text-gray-600">Hike to Sweet Water Lake for a mud bath, then venture into the jungle to find the Banyan Tree.</p>
                             </div>
@@ -312,13 +302,13 @@
 
                         <!-- Event 3 -->
                         <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-boho-sand bg-boho-rust text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-boho-sand bg-boho-orange text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                                 <i class="fa-solid fa-parachute-box text-sm"></i>
                             </div>
                             <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow">
                                 <div class="flex items-center justify-between mb-1">
                                     <h4 class="font-bold text-boho-dark text-lg">Adrenaline Rush</h4>
-                                    <span class="text-boho-rust font-semibold text-sm">2:00 PM</span>
+                                    <span class="text-boho-orange font-semibold text-sm">2:00 PM</span>
                                 </div>
                                 <p class="text-sm text-gray-600">Take to the skies with tandem paragliding off the northern cliffs or hit the waves for a surf lesson.</p>
                             </div>
@@ -332,7 +322,7 @@
                             <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow">
                                 <div class="flex items-center justify-between mb-1">
                                     <h4 class="font-bold text-boho-dark text-lg">Sunset Drum Circle</h4>
-                                    <span class="text-boho-rust font-semibold text-sm">5:30 PM</span>
+                                    <span class="text-boho-orange font-semibold text-sm">5:30 PM</span>
                                 </div>
                                 <p class="text-sm text-gray-600">Gather at the main beach. Shop at the flea market, watch fire dancers, and dance to the rhythm of the drums.</p>
                             </div>
@@ -400,19 +390,6 @@
                 </div>
 
             </div>
-            
-            <div class="mt-12 bg-boho-teal text-white p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between reveal">
-                <div class="mb-6 md:mb-0">
-                    <h4 class="text-2xl font-serif font-bold mb-2">Best Time to Visit</h4>
-                    <p class="text-teal-50">November to February offers the best weather, cool breezes, and full-swing beach shacks.</p>
-                </div>
-                <div class="flex gap-4">
-                    <div class="bg-white/20 px-4 py-2 rounded-lg text-center backdrop-blur-sm">
-                        <span class="block text-2xl font-bold">28°C</span>
-                        <span class="text-xs uppercase tracking-wider text-teal-100">Avg Winter</span>
-                    </div>
-                </div>
-            </div>
 
             <div class="mt-16 reveal">
                 <div class="text-center mb-8">
@@ -429,6 +406,19 @@
                         loading="lazy" 
                         referrerpolicy="strict-origin-when-cross-origin">
                     </iframe>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-boho-teal text-white p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between reveal">
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-2xl font-serif font-bold mb-2">Best Time to Visit</h4>
+                    <p class="text-teal-50">November to February offers the best weather, cool breezes, and full-swing beach shacks.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="bg-white/20 px-4 py-2 rounded-lg text-center backdrop-blur-sm">
+                        <span class="block text-2xl font-bold">28°C</span>
+                        <span class="text-xs uppercase tracking-wider text-teal-100">Avg Winter</span>
+                    </div>
                 </div>
             </div>
 
